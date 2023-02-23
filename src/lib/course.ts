@@ -32,9 +32,14 @@ export async function purchaseCourse(courseId: number) {
 }
 
 export function useCoursesQuery(id?: string, params?: Params, options?: any) {
-    const queryKey = ["courses"];
+    let queryKey = ["courses"];
     if (id) queryKey.push(id);
-    if (params) [...queryKey, ...Object.keys(params), ...Object.values(params)];
+    if (params)
+        queryKey = [
+            ...queryKey,
+            ...Object.keys(params),
+            ...Object.values(params),
+        ];
 
     const { isSuccess, isLoading, isError, data } = useQuery(
         queryKey,
@@ -68,9 +73,14 @@ export async function getLesson(id: string) {
 }
 
 export function useLessonsQuery(id?: string, params?: Params) {
-    const queryKey = ["lessons"];
+    let queryKey = ["lessons"];
     if (id) queryKey.push(id);
-    if (params) [...queryKey, ...Object.keys(params), ...Object.values(params)];
+    if (params)
+        queryKey = [
+            ...queryKey,
+            ...Object.keys(params),
+            ...Object.values(params),
+        ];
 
     const { isSuccess, isLoading, isError, data } = useQuery(queryKey, () =>
         id ? getLesson(id) : getLessons(params)

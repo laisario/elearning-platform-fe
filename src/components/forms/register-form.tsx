@@ -21,8 +21,8 @@ const RegisterForm = () => {
     } = useForm<IFormValues>();
 
     const { register: registerUser } = useUser();
-    const onSubmit: SubmitHandler<IFormValues> = async (values) => {
-        await registerUser(values);
+    const onSubmit: SubmitHandler<IFormValues> = (values) => {
+        registerUser(values);
     };
 
     return (

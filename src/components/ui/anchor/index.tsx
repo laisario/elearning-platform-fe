@@ -35,6 +35,7 @@ const Anchor = ({
         return (
             <span
                 className={clsx(className, "tw-cursor-pointer")}
+                onKeyDown={() => {}}
                 onClick={onClick}
             >
                 {children}

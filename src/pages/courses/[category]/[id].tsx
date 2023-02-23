@@ -12,8 +12,8 @@ type TProps = {
     data: {
         id: string;
         category: string;
-        course: any;
-        relatedCourses: any[];
+        course: ICourse;
+        relatedCourses: ICourse[];
     };
 };
 
@@ -22,9 +22,10 @@ type PageProps = NextPage<TProps> & {
 };
 
 const SingleCourse: PageProps = ({ data }) => {
-    const { data: course } = useCoursesQuery(data.id, undefined, {
+    const { data: courseData } = useCoursesQuery(data.id, undefined, {
         initialData: data.course,
     });
+    const course = courseData as ICourse;
     const { data: { results: relatedCourses } = {} } = useCoursesQuery(
         undefined,
         { category: data.category },
