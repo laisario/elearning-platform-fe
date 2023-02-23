@@ -4,12 +4,12 @@ import Layout01 from "@layout/layout-01";
 import Breadcrumb from "@components/breadcrumb";
 import CourseArea from "@containers/course-full";
 import { ICourse, ICategory } from "@utils/types";
+import { QueryClient } from "react-query";
 import {
     getCategories,
     getCourses,
     useCoursesQuery,
 } from "../../../lib/course";
-import { QueryClient } from "react-query";
 
 type TProps = {
     data: {

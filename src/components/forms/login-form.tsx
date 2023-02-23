@@ -2,7 +2,6 @@
 import { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import Input from "@ui/form-elements/input";
-import Checkbox from "@ui/form-elements/checkbox";
 import FeedbackText from "@ui/form-elements/feedback";
 import Button from "@ui/button";
 import { hasKey } from "@utils/methods";
@@ -13,7 +12,11 @@ interface IFormValues {
     password: string;
 }
 
-const LoginForm = ({ onClose }) => {
+interface Props {
+    onClose: () => void;
+}
+
+const LoginForm = ({ onClose }: Props) => {
     const [serverState, setServerState] = useState("");
     const { login } = useUser();
     const {

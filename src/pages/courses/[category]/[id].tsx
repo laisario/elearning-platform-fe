@@ -5,8 +5,8 @@ import Breadcrumb from "@components/breadcrumb";
 import CourseDetails from "@containers/course-details";
 import RelatedCourseArea from "@containers/course";
 import { ICourse } from "@utils/types";
-import { getCourse, getCourses, useCoursesQuery } from "../../../lib/course";
 import { QueryClient } from "react-query";
+import { getCourse, getCourses, useCoursesQuery } from "../../../lib/course";
 
 type TProps = {
     data: {

@@ -1,36 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-return */
-import type { Dispatch, SetStateAction } from "react";
-import { SectionType, ICourse } from "./types";
-
-export const normalizedData = <T>(data: T[], identifier: keyof T) => {
-    let allContetnt: { [x: string]: SectionType } = {};
-    data.forEach((item) => {
-        // Remove properties with null value
-        const newObj: T = item;
-        Object.entries(item).reduce((acc, cur: [string, string]) => {
-            const [key, property] = cur;
-            if (property === null) {
-                return acc;
-            }
-            return {
-                ...acc,
-                [key]: property,
-            };
-        }, {});
-
-        // Store All Content
-        const k = newObj[identifier] as unknown as string;
-
-        allContetnt = {
-            ...allContetnt,
-            [k]: {
-                ...newObj,
-            },
-        };
-    });
-    return allContetnt;
-};
 
 export const slugify = (text: string): string => {
     if (!text) return "";
@@ -63,62 +32,6 @@ export const toCapitalize = (text: string) => {
 
 export const normalizePath = (path: string) => {
     return path.startsWith("/") ? path.slice(1) : path;
-};
-
-export const courseSorting = (
-    sortValue: string,
-    courses: ICourse[],
-    defaultCourses: ICourse[],
-    setSort: Dispatch<SetStateAction<ICourse[]>>
-) => {
-    const cousesCopy = [...courses];
-
-    switch (sortValue) {
-        case "latest": {
-            const sorted = cousesCopy.sort((a, b) =>
-                new Date(a.published_at).getTime() >
-                new Date(b.published_at).getTime()
-                    ? -1
-                    : 1
-            );
-            setSort(sorted);
-            break;
-        }
-        case "popular": {
-            const sorted = cousesCopy.sort((a, b) =>
-                a.total_students > b.total_students ? -1 : 1
-            );
-            setSort(sorted);
-            break;
-        }
-        case "price": {
-            const sorted = cousesCopy.sort((a, b) =>
-                b.price > a.price ? -1 : 1
-            );
-            setSort(sorted);
-            break;
-        }
-        case "price-desc": {
-            const sorted = cousesCopy.sort((a, b) =>
-                a.price > b.price ? -1 : 1
-            );
-            setSort(sorted);
-            break;
-        }
-        default: {
-            setSort(defaultCourses);
-        }
-    }
-};
-
-export const minutesToHours = (minutes: number): string => {
-    const hours = Math.floor(minutes / 60);
-    const minutesLeft = minutes % 60;
-
-    const hoursString = hours > 0 ? `${hours}h ` : "";
-    const minutesString = minutesLeft > 0 ? `${minutesLeft}m` : "";
-
-    return `${hoursString}${minutesString}`;
 };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

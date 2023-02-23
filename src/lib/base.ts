@@ -7,7 +7,7 @@ const getAxiosInstance = (ctx?: any) => {
     const instance = axios.create({
         baseURL: "https://api.medcursos.online",
     });
-    if (token) instance.defaults.headers["Authorization"] = `Bearer ${token}`;
+    if (token) instance.defaults.headers.Authorization = `Bearer ${token}`;
 
     return instance;
 };

@@ -45,7 +45,7 @@ const CourseCard = forwardRef<HTMLDivElement, TProps>(
                             alt={name}
                             width={370}
                             height={229}
-                            loading={"lazy"}
+                            loading="lazy"
                             className="tw-w-full tw-transition-transform tw-duration-1000 tw-ease-out group-hover:tw-scale-110"
                         />
                     )}

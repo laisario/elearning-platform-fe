@@ -39,7 +39,10 @@
       "react/jsx-props-no-spreading": "off",
       "import/prefer-default-export": "off",
       "no-param-reassign": "off",
-      "import/extensions": [
+      "@typescript-eslint/no-unsafe-assignment": "off",
+      "@typescript-eslint/no-unsafe-return": "off",
+      "@typescript-eslint/no-explicit-any": "off",
+,      "import/extensions": [
         "error",
         "ignorePackages",
         {

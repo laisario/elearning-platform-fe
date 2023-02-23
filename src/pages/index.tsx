@@ -10,9 +10,9 @@ import CtaArea from "@containers/cta";
 
 import { ICourse } from "@utils/types";
 
-import { getCourses, useCoursesQuery } from "../lib/course";
 import { dehydrate, QueryClient } from "react-query";
 import { getTestimonials, useTestimonialsQuery } from "lib/testimonials";
+import { getCourses, useCoursesQuery } from "../lib/course";
 
 interface PageContent {
     section: string;

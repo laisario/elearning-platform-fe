@@ -33,10 +33,10 @@ const CourseCard = forwardRef<HTMLDivElement, TProps>(
                             <img
                                 className="tw-w-full tw-h-full tw-object-cover"
                                 src={image}
-                                alt={"Course"}
+                                alt="Course"
                                 width={170}
                                 height={170}
-                                loading={"lazy"}
+                                loading="lazy"
                             />
                         )}
                         <Anchor path={path} className="link-overlay">

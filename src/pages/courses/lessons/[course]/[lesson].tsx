@@ -8,13 +8,13 @@ import Spinner from "@ui/spinner";
 import { flatDeep } from "@utils/methods";
 import { ICourse } from "@utils/types";
 import { useUser } from "@contexts/user-context";
+import { QueryClient, dehydrate } from "react-query";
 import {
     getCourse,
     getCourses,
     getLesson,
     useLessonsQuery,
 } from "../../../../lib/course";
-import { QueryClient, dehydrate } from "react-query";
 
 type TProps = {
     data: {

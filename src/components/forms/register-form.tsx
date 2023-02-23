@@ -3,7 +3,7 @@ import Input from "@ui/form-elements/input";
 import Button from "@ui/button";
 import { hasKey } from "@utils/methods";
 import { useUser } from "@contexts/user-context";
-import { RegisterPayload } from "lib/auth";
+
 interface IFormValues {
     email: string;
     firstName: string;

@@ -32,7 +32,7 @@ export async function purchaseCourse(courseId: number) {
 }
 
 export function useCoursesQuery(id?: string, params?: Params, options?: any) {
-    let queryKey = ["courses"];
+    const queryKey = ["courses"];
     if (id) queryKey.push(id);
     if (params) [...queryKey, ...Object.keys(params), ...Object.values(params)];
 
@@ -68,7 +68,7 @@ export async function getLesson(id: string) {
 }
 
 export function useLessonsQuery(id?: string, params?: Params) {
-    let queryKey = ["lessons"];
+    const queryKey = ["lessons"];
     if (id) queryKey.push(id);
     if (params) [...queryKey, ...Object.keys(params), ...Object.values(params)];
 

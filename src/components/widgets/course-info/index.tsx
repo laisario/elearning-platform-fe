@@ -1,5 +1,4 @@
 /* eslint-disable react/jsx-no-useless-fragment */
-import { useState } from "react";
 import dayjs from "dayjs";
 import Router from "next/router";
 import Button from "@ui/button";
@@ -7,11 +6,11 @@ import SocialShare from "@components/social-share/layout-01";
 import { useUser } from "@contexts/user-context";
 import { useCart } from "@contexts/cart-context";
 import { useMount } from "@hooks";
-import CourseInfoItem from "./item";
 import duration from "dayjs/plugin/duration";
 import relativeTime from "dayjs/plugin/relativeTime";
 import ptLocale from "dayjs/locale/pt-br";
 import { ICourse } from "@utils/types";
+import CourseInfoItem from "./item";
 
 dayjs.extend(duration);
 dayjs.locale(ptLocale);
