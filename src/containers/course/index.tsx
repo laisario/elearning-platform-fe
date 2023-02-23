@@ -32,7 +32,7 @@ const CourseArea = ({ data: { courses }, title, subtitle }: TProps) => {
                     variants={scrollUpVariants}
                 />
                 <div className="tw-grid md:tw-grid-cols-2 lg:tw-grid-cols-3 tw-gap-[30px]">
-                    {courses?.map((course) => (
+                    {courses?.slice(0, 7)?.map((course) => (
                         <AnimatedCourseCard
                             key={course.id}
                             summary={course.summary}
