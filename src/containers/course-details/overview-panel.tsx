@@ -15,7 +15,7 @@ const OverviewPanel = ({
         <div className="course-overview tw-prose prose-h2:tw-text-xl sm:prose-h2:tw-text-3xl tw-max-w-none">
             <p>{summary}</p>
             {introVideo && (
-                <video controls>
+                <video controls controlsList="nodownload">
                     <source src={introVideo} type="video/mp4" />
                 </video>
             )}
