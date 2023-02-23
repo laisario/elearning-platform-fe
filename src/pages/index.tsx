@@ -38,7 +38,8 @@ const Home: PageProps = ({ data }) => {
         undefined,
         {
             initialData: data.courses,
-            select: (data: { results: any[] }) => data.results.slice(0, 7),
+            select: (response: { results: any[] }) =>
+                response.results.slice(0, 7),
         }
     );
 
