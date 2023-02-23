@@ -54,14 +54,14 @@ const CourseCard = forwardRef<HTMLDivElement, TProps>(
                         <h3 className="tw-text-xl tw-leading-normal tw-mb-0">
                             <Anchor path={path}>{name}</Anchor>
                         </h3>
-                        <ul className="tw-text-sm sm:tw-text-md tw-flex tw-flex-wrap tw-mt-2.5 ">
-                            {lessons_count && (
+                        {!!lessons_count && (
+                            <ul className="tw-text-sm sm:tw-text-md tw-flex tw-flex-wrap tw-mt-2.5 ">
                                 <li className="tw-mr-7">
                                     <i className="far fa-file-alt tw-mr-2.5" />
                                     {lessons_count} Aulas
                                 </li>
-                            )}
-                        </ul>
+                            </ul>
+                        )}
                     </div>
                 </div>
                 <Button
