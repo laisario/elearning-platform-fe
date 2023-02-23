@@ -164,6 +164,7 @@ export interface ICourse {
     reviews?: ReviewType[];
     curriculum: IDType[];
     intro_video_id: string;
+    intro_video: string;
     lessons_count: number;
     students_count: number;
     availability: string;
