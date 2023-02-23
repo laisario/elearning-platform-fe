@@ -38,7 +38,7 @@ const ReviewPanel = (props: IReview) => {
                         </div>
                         <StarRating rating={average} />
                         <div className="tw-mt-0.5">
-                            ({reviews.length} avaliacoes)
+                            ({reviews?.length} avaliacoes)
                         </div>
                     </div>
                 </div>
@@ -64,7 +64,7 @@ const ReviewPanel = (props: IReview) => {
                     ))}
                 </div>
             </div>
-            {reviews.length > 0 && (
+            {reviews?.length > 0 && (
                 <ul className="course-reviews-list tw-mt-[50px]">
                     {reviews.map((item) => (
                         <li

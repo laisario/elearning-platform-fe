@@ -18,9 +18,13 @@ const CourseDetails = ({ data: { course } }: TProps) => {
                 <div className="lg:tw-col-[1/3]">
                     <TabContainer variant="underline">
                         <TabList>
-                            <TabNav>Visao Geral</TabNav>
-                            <TabNav>Grade Curricular</TabNav>
-                            <TabNav>Avaliacoes</TabNav>
+                            <TabNav>Visão Geral</TabNav>
+                            {!!course?.sections?.length && (
+                                <TabNav>Grade Currícular</TabNav>
+                            )}
+                            {!!course?.reviews?.length && (
+                                <TabNav>Avaliações</TabNav>
+                            )}
                         </TabList>
                         <TabContent className="tw-mt-10 lg:tw-mt-[50px]">
                             <TabPane>
@@ -41,7 +45,7 @@ const CourseDetails = ({ data: { course } }: TProps) => {
                                 )}
                             </TabPane>
                             <TabPane>
-                                {course?.reviews && (
+                                {!!course?.reviews?.length && (
                                     <ReviewPanel reviews={course.reviews} />
                                 )}
                             </TabPane>
