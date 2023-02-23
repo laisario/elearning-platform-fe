@@ -67,7 +67,11 @@ const CourseCard = forwardRef<HTMLDivElement, TProps>(
                     <h3 className="tw-leading-normal tw-text-secondary tw-m-0">
                         <Anchor path={path}>{name}</Anchor>
                     </h3>
-                    {summary && <p className="tw-mt-2.5">{summary}</p>}
+                    {summary && (
+                        <p className="tw-mt-2.5">
+                            {summary.substring(0, 255) + "..."}
+                        </p>
+                    )}
                 </div>
             </div>
         );
