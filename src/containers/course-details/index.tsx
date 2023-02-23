@@ -27,7 +27,8 @@ const CourseDetails = ({ data: { course } }: TProps) => {
                             <TabPane>
                                 {course?.description && (
                                     <OverviewPanel
-                                        introVideo={course.intro_video_id}
+                                        introVideo={course.intro_video}
+                                        introVideoId={course.intro_video_id}
                                         summary={course.summary}
                                         description={course?.description}
                                     />
