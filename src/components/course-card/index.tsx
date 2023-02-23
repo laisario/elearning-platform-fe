@@ -69,7 +69,7 @@ const CourseCard = forwardRef<HTMLDivElement, TProps>(
                     </h3>
                     {summary && (
                         <p className="tw-mt-2.5">
-                            {summary.substring(0, 255) + "..."}
+                            {`${summary.substring(0, 255)}...`}
                         </p>
                     )}
                 </div>
