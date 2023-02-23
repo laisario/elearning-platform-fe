@@ -1,5 +1,6 @@
 export default {
-    name: "Cursos da tia Ale",
-    titleTemplate: "Online Learning",
-    description: "Online Learning and Education",
+    name: "MedCursos",
+    titleTemplate: "Seja um medico de excelencia",
+    description:
+        "Somos uma plataforma de cursos para te ajudar a alavancar sua carreira como medico",
 };

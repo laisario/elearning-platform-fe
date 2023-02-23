@@ -44,7 +44,7 @@ const Home: PageProps = ({ data }) => {
 
     return (
         <>
-            <SEO title="Cursos da Tia Ale" />
+            <SEO title="MedCursos" />
             <HeroArea />
             <CourseArea data={{ courses }} />
             <VideoArea />
