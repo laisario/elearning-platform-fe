@@ -1,0 +1,13 @@
+[
+  {
+    "id": 1,
+    "label": "Especialidades",
+    "path": "/courses",
+    "submenu": []
+  },
+  {
+    "id": 2,
+    "label": "Carrinho",
+    "path": "/carrinho"
+  }
+]
