@@ -36,8 +36,12 @@ const Home: PageProps = ({ data }) => {
     const { data: { results: courses } = {} } = useCoursesQuery(
         undefined,
         undefined,
-        { initialData: data.courses }
+        {
+            initialData: data.courses,
+            select: (data: { results: any[] }) => data.results.slice(0, 7),
+        }
     );
+
     const { data: { results: testimonials } = {} } = useTestimonialsQuery({
         initialData: data.testimonials,
     });

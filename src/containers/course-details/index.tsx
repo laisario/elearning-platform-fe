@@ -12,6 +12,7 @@ type TProps = {
 };
 
 const CourseDetails = ({ data: { course } }: TProps) => {
+    console.log(course);
     return (
         <section className="course-details">
             <div className="tw-container tw-grid lg:tw-grid-cols-3 tw-gap-12">
