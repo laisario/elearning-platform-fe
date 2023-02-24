@@ -70,7 +70,7 @@ const Header = ({ shadow, fluid, transparent, mode }: TProps) => {
                             fluid && "tw-max-w-full tw-px-3.8 3xl:tw-px-37"
                         )}
                     >
-                        <Logo className="tw-py-2" />
+                        <Logo />
 
                         <MainMenu
                             className="tw-hidden xl:tw-block"

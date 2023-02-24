@@ -40,6 +40,7 @@ const CourseDetails = ({ data: { course } }: TProps) => {
                             <TabPane>
                                 {!!course?.sections?.length && (
                                     <CurriculamPanel
+                                        course={course?.id}
                                         sections={course?.sections}
                                     />
                                 )}

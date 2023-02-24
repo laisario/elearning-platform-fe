@@ -20,10 +20,9 @@ const Sidebar = ({ open, courseId }: TProps) => {
                 !open && "tw-w-[340px] md:tw-w-0"
             )}
         >
-            <SearchForm className="tw-h-[90px] md:tw-h-15" />
             <div
                 className={clsx(
-                    "tw-absolute tw-top-[90px] md:tw-top-15 tw-left-0 tw-bottom-0 tw-h-full tw-z-1 tw-overflow-y-auto tw-no-scroll tw-w-[340px] tw-transition-all tw-duration-300",
+                    "tw-absolute tw-top-0 tw-left-0 tw-bottom-0 tw-h-full tw-z-1 tw-overflow-y-auto tw-no-scroll tw-w-[340px] tw-transition-all tw-duration-300",
                     !open &&
                         "tw-delay-100 tw-visible tw-opacity-100 md:tw-invisible md:tw-opacity-0 md:tw-delay-0",
                     open &&

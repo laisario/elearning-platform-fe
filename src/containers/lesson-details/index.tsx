@@ -37,11 +37,12 @@ const LessonDetails = ({ data: { lesson, course } }: TProps) => {
     return (
         <div className="tw-mx-auto tw-px-3.8 tw-py-[100px] tw-max-w-[930px]">
             <h2 className="tw-mb-[18px]">{lesson.name}</h2>
+            <MarkdownRenderer content={lesson.summary} />
             {(lesson?.video || lesson?.video_id) && (
                 <iframe
                     src={lesson?.video || lesson?.video_id}
                     title={lesson.name}
-                    className="tw-mb-10"
+                    className="tw-my-10"
                 />
             )}
             <MarkdownRenderer content={lesson.description} />

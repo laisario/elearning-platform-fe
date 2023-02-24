@@ -20,10 +20,10 @@ const ProfileBio = () => {
     return (
         <Section className="profile-area">
             <div className="tw-container ">
-                <div className="tw-flex tw-flex-row">
-                    <div className="tw-w-3/4">
+                <div className="tw-flex tw-flex-col md:tw-flex-row">
+                    <div className="md:tw-w-3/4">
                         <h2>Sua área de estudos</h2>
-                        <div className="tw-flex tw-flex-row tw-gap-x-3">
+                        <div className="tw-flex tw-flex-row tw-gap-x-3 tw-overflow-scroll">
                             <Button active>Seus cursos</Button>
                             <Button>Seus simulados</Button>
                             <Button>Suas perguntas</Button>
@@ -50,10 +50,12 @@ const ProfileBio = () => {
                             ))}
                         </div>
                     </div>
-                    <div className="tw-w-1/4 tw-shadow-2sm tw-shadow-heading/10 tw-rounded tw-p-5 tw-h-fit">
+                    <div className="md:tw-w-1/4 tw-shadow-2sm tw-shadow-heading/10 tw-rounded tw-p-5 tw-h-fit tw-mt-14 md:tw-mt-0">
                         <img
                             className="tw-rounded-full tw-mx-auto tw-mb-4"
-                            src="/images/testimonial/100/home-4-testimonial-avatar-02.png"
+                            src="https://upload.wikimedia.org/wikipedia/commons/5/59/User-avatar.svg"
+                            width={100}
+                            height={100}
                         />
                         <h3 className="tw-text-center">
                             {user?.firstName} {user?.lastName}

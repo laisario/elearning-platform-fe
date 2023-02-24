@@ -6,6 +6,7 @@ import dayjs from "dayjs";
 import duration from "dayjs/plugin/duration";
 import relativeTime from "dayjs/plugin/relativeTime";
 import ptLocale from "dayjs/locale/pt-br";
+import { useUser } from "@contexts/user-context";
 
 dayjs.extend(duration);
 dayjs.locale(ptLocale);
@@ -13,9 +14,10 @@ dayjs.extend(relativeTime);
 
 type TProps = {
     sections: ISection[];
+    course: number;
 };
 
-const CurriculumPanel = ({ sections }: TProps) => {
+const CurriculumPanel = ({ sections, course }: TProps) => {
     const getDuration = (duration: string) => {
         const [h, m, s] = duration.split(":");
         const hours = Number(h);
@@ -23,6 +25,10 @@ const CurriculumPanel = ({ sections }: TProps) => {
         const seconds = Number(s);
         return dayjs.duration({ hours, minutes, seconds }).humanize();
     };
+    const { user } = useUser();
+    const enrolledCourse = user?.purchasedCourses?.find(
+        (purchased) => purchased.id === course
+    );
 
     return (
         <div className="curriculum-sections">
@@ -42,17 +48,16 @@ const CurriculumPanel = ({ sections }: TProps) => {
                     {lessons.length > 0 && (
                         <ul className="section-content">
                             {lessons.map((item) => {
-                                const hasAccess = false;
                                 return (
                                     <li
                                         key={item.id}
                                         className="tw-text-md even:tw-bg-light-100 odd:tw-bg-white even:last:tw-rounded-b"
                                     >
                                         <Anchor
-                                            path={`/`}
+                                            path={`/courses/lessons/${course}/${item.id}`}
                                             className={clsx(
                                                 "tw-px-3.8 md:tw-pl-12 md:tw-pr-7.5 tw-min-h-[56px] tw-flex tw-flex-wrap tw-items-center",
-                                                !hasAccess &&
+                                                !enrolledCourse &&
                                                     "tw-pointer-events-none"
                                             )}
                                         >
@@ -68,12 +73,6 @@ const CurriculumPanel = ({ sections }: TProps) => {
                                             <div className="tw-text-right tw-flex tw-items-center tw-py-2.5">
                                                 <Badge className="tw-ml-2.5">
                                                     {getDuration(item.duration)}
-                                                </Badge>
-                                                <Badge
-                                                    className="tw-ml-2.5"
-                                                    color="primary"
-                                                >
-                                                    Previa
                                                 </Badge>
                                                 {(item?.video ||
                                                     item.video_id) && (

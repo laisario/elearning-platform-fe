@@ -7,6 +7,9 @@ import ProgressBar from "@ui/progress-bar";
 type TProps = {
     className?: string;
     course: {
+        category: {
+            name: string;
+        };
         name: string;
         slug: string;
         id: number;
@@ -33,7 +36,9 @@ const Header = ({ className, course }: TProps) => {
         >
             <div className="tw-flex tw-flex-wrap tw-justify-between tw-items-center tw-min-h-[60px] tw-max-w-[930px] tw-px-3.8 tw-mx-auto">
                 <h1 className="tw-text-white tw-text-lg md:tw-text-[22px] tw-leading-tight tw-m-0">
-                    <Anchor path={`/courses/${course.id}`}>
+                    <Anchor
+                        path={`/courses/${course.category.name}/${course.id}`}
+                    >
                         {course?.name}
                     </Anchor>
                 </h1>

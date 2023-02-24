@@ -3,7 +3,48 @@
     "id": 1,
     "label": "Especialidades",
     "path": "/courses",
-    "submenu": []
+    "submenu": [
+      {
+        "id": 2,
+        "label": "Cardiologia",
+        "path": "/courses/Cardiologia"
+      },
+      {
+        "id": 3,
+        "label": "Dermatologia",
+        "path": "/courses/Dermatologia"
+      },
+      {
+        "id": 4,
+        "label": "Endocrinologia",
+        "path": "/courses/Endocrinologia"
+      },
+      {
+        "id": 5,
+        "label": "Gastroenterologia",
+        "path": "/courses/Gastroenterologia"
+      },
+      {
+        "id": 6,
+        "label": "Hematologia",
+        "path": "/courses/Hematologia"
+      },
+      {
+        "id": 7,
+        "label": "Infectologia",
+        "path": "/courses/Infectologia"
+      },
+      {
+        "id": 8,
+        "label": "Neurologia",
+        "path": "/courses/Neurologia"
+      },
+      {
+        "id": 9,
+        "label": "Nefrologia",
+        "path": "/courses/Nefrologia"
+      }
+    ]
   },
   {
     "id": 2,

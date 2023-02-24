@@ -28,14 +28,12 @@ const CourseCard = forwardRef<HTMLDivElement, TProps>(
                 ref={ref}
             >
                 <div className="tw-flex tw-flex-row tw-items-center">
-                    <div className="tw-relative tw-z-1 tw-flex tw-overflow-hidden tw-rounded-full tw-w-[170px] tw-min-w-[170px] tw-h-[170px]">
+                    <div className="tw-relative tw-z-1 tw-flex tw-overflow-hidden tw-rounded-full md:tw-w-[170px] md:tw-min-w-[170px] md:tw-h-[170px]">
                         {image && (
                             <img
-                                className="tw-w-full tw-h-full tw-object-cover"
+                                className="tw-hidden md:tw-block tw-w-full tw-h-full tw-object-cover"
                                 src={image}
                                 alt="Course"
-                                width={170}
-                                height={170}
                                 loading="lazy"
                             />
                         )}
@@ -44,10 +42,10 @@ const CourseCard = forwardRef<HTMLDivElement, TProps>(
                         </Anchor>
                     </div>
                     <div className="info tw-z-1 tw-mt-5 sm:tw-mt-0 sm:tw-pl-7.5">
-                        <span className="tw-text-primary tw-text-xl sm:tw-text-2xl tw-font-extrabold tw-leading-none tw-inline-flex tw-mb-1 sm:tw-mb-2">
+                        <span className="tw-text-primary tw-text-xl sm:tw-text-2xl tw-font-extrabold tw-leading-none tw-inline-flex tw-align-center tw-mb-1 sm:tw-mb-2">
                             R$
                             {price.toString().split(".")[0]}
-                            <span className="tw-text-lg">
+                            <span className="md:tw-text-lg">
                                 .{price.toString().split(".")[1]}
                             </span>
                         </span>

@@ -19,8 +19,8 @@ const CourseArea = () => {
     return (
         <Section className="course-area">
             <div className="tw-container">
-                <div className="tw-flex tw-flex-row">
-                    <div className="tw-grid lg:tw-grid-cols-1 tw-gap-7.5 tw-w-[75%] tw-h-min">
+                <div className="tw-flex tw-flex-col md:tw-flex-row">
+                    <div className="tw-grid md:tw-grid-cols-1 md:tw-gap-7.5 md:tw-w-[75%] md:tw-h-min">
                         {!cart?.length && (
                             <div>
                                 <h1>Que pena!</h1>
@@ -44,7 +44,7 @@ const CourseArea = () => {
                             />
                         ))}
                     </div>
-                    <div className="tw-bg-white tw-ml-15 tw-w-[25%] tw-h-fit tw-p-5 tw-shadow-2sm tw-shadow-heading/10 tw-rounded lg:tw-max-w-[340px]">
+                    <div className="tw-bg-white tw-mt-24 md:tw-ml-15 md:tw-w-[25%] tw-h-fit tw-p-5 tw-shadow-2sm tw-shadow-heading/10 tw-rounded md:tw-max-w-[340px]">
                         <h3>Carrinho</h3>
                         <p>Voce tem {cart?.length} cursos no seu carrinho</p>
                         <div className="tw-mb-4">
